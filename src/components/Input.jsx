@@ -27,7 +27,6 @@ const Input = (props) => {
           <Label name="Item" />
         </div>
         <Inputbox name="Item" handleItem={handleItem} item={item} />
-        {item}
       </div>
 
       <div className="row">
@@ -35,7 +34,6 @@ const Input = (props) => {
           <Label name="Price" />
         </div>
         <Inputbox name="Price" handleItem={handlePrice} item={price} />
-        {price}
       </div>
 
       <div className="row">
@@ -43,7 +41,6 @@ const Input = (props) => {
           <Label name="Date" />
         </div>
         <Inputbox name="date" handleItem={handleDate} item={date} />
-        {date}
       </div>
 
       <Button

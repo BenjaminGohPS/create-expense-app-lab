@@ -7,13 +7,11 @@ const Inputbox = (props) => {
       type="text"
       placeholder={props.name}
       onChange={props.handleItem}
-      value={props.item} // need to add this
+      value={props.item}
     />
   );
 };
 
 export default Inputbox;
 
-/**
-onChange={(event) => props.handleItem(event.target.value)}
-*/
+
