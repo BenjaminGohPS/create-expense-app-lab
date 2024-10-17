@@ -6,7 +6,8 @@ const Button = (props) => {
     <button
       className={`btn ${props.className}`}
       type="button"
-      onClick={props.onClick}
+      style={{ backgroundColor: "pink" }}
+      onClick={props.handleExpense}
     >
       {props.children}
     </button>
@@ -14,3 +15,8 @@ const Button = (props) => {
 };
 
 export default Button;
+
+/**
+ onClick={() => {
+        props.handleExpense(props.item, props.price, props.date);
+*/

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Label from "./Label";
 import Inputbox from "./Inputbox";
+import Button from "./Button";
 
-const Input = () => {
+const Input = (props) => {
   const [item, setItem] = useState("");
   const [price, setPrice] = useState("");
   const [date, setDate] = useState("");
@@ -38,22 +39,21 @@ const Input = () => {
       </div>
 
       <div className="row">
-        <div className="col-md-3">
+        <div className="col-sm-3">
           <Label name="Date" />
         </div>
         <Inputbox name="date" handleItem={handleDate} item={date} />
         {date}
       </div>
 
-      <button className="col--2">create</button>
+      <Button
+        handleExpense={() => props.handleExpense({ item, price, date })}
+        className="create"
+      >
+        create
+      </Button>
     </div>
   );
 };
 
 export default Input;
-
-/**
-RMB TO DELETE THE ADDITIONAL {item} {price} {date}
-because this wanted to check
- 
-*/
