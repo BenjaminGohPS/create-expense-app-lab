@@ -15,6 +15,10 @@ const App = () => {
     setExpense((prevState) => [...prevState, item]);
   };
 
+  const deleteExpense = (item, idx) => {
+    setExpense((prevState) => [...prevState].toSpliced(idx, 1));
+  };
+
   return (
     <div className="container-fluid">
       <h1>Expense App</h1>
@@ -23,20 +27,9 @@ const App = () => {
       </div>
       <br />
       <div className="container" style={{ border: "1px black solid" }}>
-        <Form expense={expense} />
-        {JSON.stringify({ expense })}
+        <Form expense={expense} handleExpense={deleteExpense} />
       </div>
     </div>
   );
 };
 export default App;
-
-/* 
- {JSON.stringify({ expense })}
-  {expense[0].item}
-  if (i=0;i<expense.length;i++)
-
-setExpense((prevState) => [...prevState, item])
-
-  [...prevState].tospliced(0, 1, item));
-*/

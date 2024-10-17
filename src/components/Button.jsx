@@ -15,8 +15,3 @@ const Button = (props) => {
 };
 
 export default Button;
-
-/**
- onClick={() => {
-        props.handleExpense(props.item, props.price, props.date);
-*/
