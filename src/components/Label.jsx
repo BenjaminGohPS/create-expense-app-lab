@@ -1,13 +1,7 @@
 import React from "react";
 
 const Label = (props) => {
-  return (
-    <div>
-      <label>{props.item}</label>
-      <label>{props.price}</label>
-      <label>{props.date}</label>
-    </div>
-  );
+  return <label>{props.name}</label>;
 };
 
 export default Label;

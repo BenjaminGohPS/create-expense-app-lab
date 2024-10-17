@@ -9,6 +9,8 @@ import Form from "./components/Form";
 // src/App.jsx
 
 const App = () => {
+  
+
   return (
     <div className="container-fluid">
       <h1>Expense App</h1>
@@ -22,5 +24,4 @@ const App = () => {
     </div>
   );
 };
-
 export default App;

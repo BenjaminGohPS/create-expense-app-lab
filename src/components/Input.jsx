@@ -1,43 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import Label from "./Label";
+import Inputbox from "./Inputbox";
 
 const Input = () => {
+  const [item, setItem] = useState("");
+  const [price, setPrice] = useState("");
+  const [date, setDate] = useState("");
+
+  const handleItem = (event) => {
+    setItem(event.target.value);
+  };
+
+  const handlePrice = (event) => {
+    setPrice(event.target.value);
+  };
+
+  const handleDate = (event) => {
+    setDate(event.target.value);
+  };
+
   return (
     <div className="container">
       <div className="row">
-        <Label item="Item" />
-        <Label price="Price" />
-        <Label date="Date" />
+        <div className="col-sm-3">
+          <Label name="Item" />
+        </div>
+        <Inputbox name="Item" handleItem={handleItem} item={item} />
+        {item}
       </div>
 
       <div className="row">
-        <input
-          className="col-md-5"
-          type="text"
-          placeholder="item"
-          //   onChange={(event) => setActivity(event.target.value)}
-          //   value={activity} // need to add this
-        />
-
-        <input
-          className="col-md-5"
-          type="text"
-          placeholder="price"
-          //   onChange={(event) => setTime(event.target.value)}
-          //   value={time}
-        />
-
-        <input
-          className="col-md-5"
-          type="text"
-          placeholder="date"
-          //   onChange={(event) => setTime(event.target.value)}
-          //   value={time}
-        />
-        <button className="col-md-2">create</button>
+        <div className="col-sm-3">
+          <Label name="Price" />
+        </div>
+        <Inputbox name="Price" handleItem={handlePrice} item={price} />
+        {price}
       </div>
+
+      <div className="row">
+        <div className="col-md-3">
+          <Label name="Date" />
+        </div>
+        <Inputbox name="date" handleItem={handleDate} item={date} />
+        {date}
+      </div>
+
+      <button className="col--2">create</button>
     </div>
   );
 };
 
 export default Input;
+
+/**
+RMB TO DELETE THE ADDITIONAL {item} {price} {date}
+because this wanted to check
+ 
+*/
