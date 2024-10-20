@@ -6,7 +6,10 @@ import Button from "./Button";
 const Input = (props) => {
   const [item, setItem] = useState("");
   const [price, setPrice] = useState("");
-  const [date, setDate] = useState("");
+  // const [date, setDate] = useState("");
+  
+  const currentDate = new Date().toISOString().split("T")[0]
+  const [date, setDate] = useState(currentDate)
 
   const handleItem = (event) => {
     setItem(event.target.value);
