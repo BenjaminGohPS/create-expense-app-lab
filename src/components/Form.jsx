@@ -9,7 +9,9 @@ const Form = (props) => {
         return (
           <Item
             expense={item}
-            handleExpense={props.handleExpense}
+            handleExpense={() => {
+              props.handleExpense(item, idx);
+            }}
             idx={idx}
             key={idx}
           />
